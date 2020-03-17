@@ -1,2 +1,2 @@
-# LGI1
-Genome-wide association analysis of paraneoplastic syndrome subjects associated with LGI1
+# GWAS-LGI1
+Genome-wide association study of LGI1 patients

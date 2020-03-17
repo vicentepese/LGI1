@@ -1,0 +1,59 @@
+{
+    "directory":{
+        "Data":"./Data/",
+        "GWAS":"./Data/GWAS/",
+        "GWAS_cases": "./Data/GWAS/Cases/",
+        "GWAS_casesOG":"./Data/GWAS/Cases/OG/",
+        "GWAS_casesBIN":"./Data/GWAS/Cases/Binaries/",
+        "GWAS_casesFILTBIN":"/Data/GWAS/Cases/FiltBinaries/",
+        "GWAS_controls":"./Data/GWAS/Controls/",
+        "GWAS_controlsOG":"./Data/GWAS/Controls/OG/",
+        "GWAS_controlsBIN":"./Data/GWAS/Controls/Binaries/",
+        "GWAS_controlsFILTBIN":"Data/GWAS/Controls/FiltBinaries/",
+        "Sample":"./Data/Samples/",
+        "Output":"./Output/"
+    },
+
+    "file":{
+        "paraneoplastic":"Data/Samples/paraneoplastic_GWAS_sample.xlsx",
+        "narcolepsy":"Data/Samples/narcolepsy_sample.xlsc",
+        "GWAS_total":"Data/Samples/GWAS_total.xlsx",
+        "GWAS_KLS":"Data/Samples/KLS control 3 markers result2.xlsx",
+        "LGI1_cases.ped":"Data/GWAS/Cases/LGI1_cases.ped",
+        "LGI1_cases.map":"Data/GWAS/Cases/LGI1_cases.map",
+        "LGI1_controls.ped":"Data/GWAS/Controls/LGI1_controls.ped",
+        "LGI1_controls.map":"Data/GWAS/Controls/LGI1_controls.map",
+        "filtLGI1":"Data/filtLGI1",
+        "LGI1":"Data/GWAS/LGI1",
+        "modLGI1.fam":"Data/modLGI1.fam",
+        "plates":"Resources/plates.csv",
+        "GWASIDsControls":"Resources/GWASIDsControls.csv",
+        "GWASIDsCases":"Resources/GWASIDsCases.csv",
+        "commonSNPs.txt":"Resources/commonSNPs.txt",
+        "mergeList.txt":"Resources/mergeList.txt",
+        "PCAeigenvectors":"Resources/LGI1.eigenvec",
+        "PCAeigenvalues":"Resources/LGI1.eigenval",
+        "postPCAeigenvectors":"Resources/postLGI1.eigenvec",
+        "postPCAeigenvalues":"Resources/postLGI1.eigenval",
+        "filtposPCAeigenvectors":"Resources/filtpostLGI1.eigenvec",
+        "excludeID.txt":"Resources/excludeID.txt",
+        "patientDistance":"Resources/distance.dist",
+        "patientDistanceID":"Resources/distance.dist.id",
+        "patList":"Resources/patList.txt",
+        "filtPostMatchPatList":"Resources/filtPostMatchPatList.txt",
+        "IBD":"Resources/LGI1.genome"
+    },
+
+    "util":{
+        "countRows":"Utils/countRows.sh",
+        "mergePEDfiles": "Utils/mergePEDfiles.sh"
+    },
+
+    "diagnosis":"LGI1",
+    "ControlCaseRatio":50,
+    "plotPCA":"True",
+    "performPCA":"True",
+    "convert2Binary":0,
+    "IBD_threshold":0.2,
+    "IBD_perform": 0
+}
