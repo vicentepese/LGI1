@@ -14,7 +14,7 @@ setwd("~/Documents/LGI1")
 settings <- jsonlite::fromJSON('settings.json')
 
 # Import association file 
-assoc.data <- read.table('./Data/filtLGI1.assoc.logistic', header = TRUE, sep = '')
+assoc.data <- read.table('./Resources/filtLGI1.assoc.logistic', header = TRUE, sep = '')
 assoc.data <- assoc.data[which(assoc.data$TEST == 'ADD'),]
 
 ######### PLOT ###########

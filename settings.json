@@ -11,6 +11,8 @@
         "GWAS_controlsBIN":"./Data/GWAS/Controls/Binaries/",
         "GWAS_controlsFILTBIN":"Data/GWAS/Controls/FiltBinaries/",
         "Sample":"./Data/Samples/",
+        "HLA_predictions":"./Data/HLA_predictions/",
+        "HLA_trained_models":"./Data/HLA_trained_models/",
         "Output":"./Output/"
     },
 
@@ -26,6 +28,7 @@
         "filtLGI1":"Data/filtLGI1",
         "LGI1":"Data/GWAS/LGI1",
         "modLGI1.fam":"Data/modLGI1.fam",
+        "PMRA_HLA_model":"Data/HLA_trained_models/PMRA-HLA4-hg19.RData",
         "plates":"Resources/plates.csv",
         "GWASIDsControls":"Resources/GWASIDsControls.csv",
         "GWASIDsCases":"Resources/GWASIDsCases.csv",
@@ -36,12 +39,15 @@
         "postPCAeigenvectors":"Resources/postLGI1.eigenvec",
         "postPCAeigenvalues":"Resources/postLGI1.eigenval",
         "filtposPCAeigenvectors":"Resources/filtpostLGI1.eigenvec",
+        "finalPCAeigenvectors":"Resources/PCAtst.eigenvec",
         "excludeID.txt":"Resources/excludeID.txt",
         "patientDistance":"Resources/distance.dist",
         "patientDistanceID":"Resources/distance.dist.id",
         "patList":"Resources/patList.txt",
         "filtPostMatchPatList":"Resources/filtPostMatchPatList.txt",
-        "IBD":"Resources/LGI1.genome"
+        "IBD":"Resources/LGI1.genome",
+        "HLA_total":"Resources/HLA_total.txt",
+        "covariates":"Resources/covariates.txt"
     },
 
     "util":{

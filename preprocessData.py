@@ -458,78 +458,78 @@ def main():
     with open('settings.json', 'r') as inFile:
         settings = json.load(inFile)
 
-    # Convert to binary if not converted yet
-    if bool(settings['convert2Binary']) is True:
-        print('Converting files to binary')
-        subprocess.run(['bash', 'convert2Binary.sh'], stdout=subprocess.PIPE())
-    else:
-        print("Files already converted to binary")
+    # # Convert to binary if not converted yet
+    # if bool(settings['convert2Binary']) is True:
+    #     print('Converting files to binary')
+    #     subprocess.run(['bash', 'convert2Binary.sh'], stdout=subprocess.PIPE())
+    # else:
+    #     print("Files already converted to binary")
 
-    # Get common SNPs within controls and cases
-    controls_SNPs = getSNPs(settings, settings['directory']['GWAS_controlsBIN'])
-    cases_SNPs = getSNPs(settings, settings['directory']['GWAS_casesBIN'])
+    # # Get common SNPs within controls and cases
+    # controls_SNPs = getSNPs(settings, settings['directory']['GWAS_controlsBIN'])
+    # cases_SNPs = getSNPs(settings, settings['directory']['GWAS_casesBIN'])
 
-    # Get common SNPs between cases and controls
-    commonSNPs = list(set(controls_SNPs).intersection(set(cases_SNPs)))
+    # # Get common SNPs between cases and controls
+    # commonSNPs = list(set(controls_SNPs).intersection(set(cases_SNPs)))
 
-    # Write common SNPS
-    with open(settings['file']['commonSNPs.txt'], 'w') as outFile:
-        for snp in commonSNPs:
-            outFile.write(snp + '\n')
+    # # Write common SNPS
+    # with open(settings['file']['commonSNPs.txt'], 'w') as outFile:
+    #     for snp in commonSNPs:
+    #         outFile.write(snp + '\n')
 
-    # # Filter snps
-    filterSNPs(settings)
+    # # # Filter snps
+    # filterSNPs(settings)
    
-    # Create merge list
-    getMergelist(settings)
+    # # Create merge list
+    # getMergelist(settings)
 
-    # Merge files
-    mergeFiles(settings)
+    # # Merge files
+    # mergeFiles(settings)
 
-    # Compute IBD and create list of patients to exclude 
-    IBDfilt(settings)
+    # # Compute IBD and create list of patients to exclude 
+    # IBDfilt(settings)
 
-    # Compute quality control
-    LGI1QC(settings)
+    # # Compute quality control
+    # LGI1QC(settings)
 
-    # Add phenotype
-    f = settings['file']['filtLGI1']
-    sep = ' '
-    addPhenotype(settings, f, sep)
+    # # Add phenotype
+    # f = settings['file']['filtLGI1']
+    # sep = ' '
+    # addPhenotype(settings, f, sep)
 
-    # Compute PCA to study badge biases
-    LGI1PCA(settings)
+    # # Compute PCA to study badge biases
+    # LGI1PCA(settings)
 
-    # Plot PCA
-    if bool(settings['plotPCA']):
-        f = settings['file']['PCAeigenvectors']
-        plotPCA(settings, f)
+    # # Plot PCA
+    # if bool(settings['plotPCA']):
+    #     f = settings['file']['PCAeigenvectors']
+    #     plotPCA(settings, f)
 
-    # Refilter to create master file 
-    refiltLGI1(settings)
+    # # Refilter to create master file 
+    # refiltLGI1(settings)
 
-    # Patient matching
-    patientMatching(settings)
+    # # Patient matching
+    # patientMatching(settings)
 
-    # Plot PCA
-    postMatchPCA(settings)
+    # # Plot PCA
+    # postMatchPCA(settings)
 
-    # Manually remove postMatch data
-    filtPostMatchData(settings)
+    # # Manually remove postMatch data
+    # filtPostMatchData(settings)
 
-    # Add field separator in PCA
-    with open(settings['file']['PCAeigenvectors'], 'r') as inFile: 
-        with open('./Resources/PCAtst.eigenvec', 'w') as outFile:
-            header = ['PC' + str(x) for x in range(1,21)]
-            header = ['FID','IID'] + header
-            outFile.write('\t'.join(header) + '\n') 
-            for row in inFile:
-                row = row.split(' ')
-                row = '\t'.join(row)
-                outFile.write(row)
+    # # Add field separator in PCA
+    # with open(settings['file']['PCAeigenvectors'], 'r') as inFile: 
+    #     with open('./Resources/PCAtst.eigenvec', 'w') as outFile:
+    #         header = ['PC' + str(x) for x in range(1,21)]
+    #         header = ['FID','IID'] + header
+    #         outFile.write('\t'.join(header) + '\n') 
+    #         for row in inFile:
+    #             row = row.split(' ')
+    #             row = '\t'.join(row)
+    #             outFile.write(row)
 
-    # Perform association analysis
-    associatioAnalysis(settings)
+    # # Perform association analysis
+    # associatioAnalysis(settings)
 
 
 if __name__ == "__main__":
